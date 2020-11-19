@@ -60,9 +60,9 @@ public class diemDAO {
         return select(sql);
     }
 
-    public Diem findByHSId(String maHocSinh, String maMon, boolean ki) {
-        String sql = "SELECT * FROM diem WHERE mahocsinh=? and mamon=? and hocki = ?";
-        List<Diem> list = select(sql, maHocSinh, maMon, ki);
+    public Diem findByHSId(UUID maHocSinh) {
+        String sql = "SELECT * FROM diem WHERE hocsinh_id = ?";
+        List<Diem> list = select(sql, maHocSinh);
         return list.size() > 0 ? list.get(0) : null;
     }
     
